@@ -1,0 +1,243 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="1600" height="1000">
+  <defs>
+    <filter id="paint" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="7" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="2.5"/>
+    </filter>
+    <filter id="soft"><feGaussianBlur stdDeviation="6"/></filter>
+    <linearGradient id="skin" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffe2c8"/><stop offset="1" stop-color="#f2b996"/></linearGradient>
+    <linearGradient id="skinElf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff0e2"/><stop offset="1" stop-color="#f6cfb6"/></linearGradient>
+    <linearGradient id="red" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e2683a"/><stop offset=".55" stop-color="#b8401f"/><stop offset="1" stop-color="#7f2715"/></linearGradient>
+    <linearGradient id="silver" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset=".5" stop-color="#dfe3ec"/><stop offset="1" stop-color="#a9b1c4"/></linearGradient>
+    <linearGradient id="leather" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#b47a46"/><stop offset=".6" stop-color="#8a5530"/><stop offset="1" stop-color="#5e3820"/></linearGradient>
+    <linearGradient id="cloth" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8f7d63"/><stop offset="1" stop-color="#5f5141"/></linearGradient>
+    <linearGradient id="cloak" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6fa36a"/><stop offset=".55" stop-color="#3f7448"/><stop offset="1" stop-color="#284d33"/></linearGradient>
+    <linearGradient id="cloakIn" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2a4a32"/><stop offset="1" stop-color="#3a5f40"/></linearGradient>
+    <linearGradient id="tunic" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbf2dc"/><stop offset="1" stop-color="#e2cfa6"/></linearGradient>
+    <linearGradient id="boot" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7d5233"/><stop offset="1" stop-color="#4a2f1d"/></linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffe08a"/><stop offset="1" stop-color="#c08a2a"/></linearGradient>
+    <radialGradient id="glow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ffd9a8" stop-opacity=".45"/><stop offset="1" stop-color="#ffd9a8" stop-opacity="0"/></radialGradient>
+    <style>
+      .ln{stroke:#3b2417;stroke-width:2.6;stroke-linejoin:round;stroke-linecap:round}
+      .th{stroke:#3b2417;stroke-width:1.6;fill:none;stroke-linecap:round}
+      .hl{fill:#fff;opacity:.35}
+      .sh{fill:#3b2417;opacity:.14}
+      text{font-family:Georgia,'Times New Roman',serif;fill:#4a2f1d}
+      .lbl{font-size:20px;letter-spacing:4px;fill:#8a6a50}
+      .nm{font-size:30px;font-style:italic}
+      .note{font-size:15px;fill:#7a5e48}
+    </style>
+  </defs>
+
+  <rect width="1600" height="1000" fill="#ffffff"/>
+  <!-- warm painterly glows behind each pair -->
+  <ellipse cx="380" cy="640" rx="330" ry="300" fill="url(#glow)"/>
+  <ellipse cx="1130" cy="560" rx="360" ry="380" fill="url(#glow)"/>
+
+  <text x="800" y="60" text-anchor="middle" style="font-size:40px;letter-spacing:3px">Fantasy Travelers — Character Sheet</text>
+  <line x1="560" y1="80" x2="1040" y2="80" stroke="#d9b98f" stroke-width="2"/>
+  <line x1="760" y1="130" x2="760" y2="940" stroke="#eadbc6" stroke-width="2" stroke-dasharray="6 8"/>
+  <line x1="60" y1="880" x2="1540" y2="880" stroke="#eadbc6" stroke-width="2"/>
+
+  <text x="380" y="130" text-anchor="middle" class="nm">Borin Emberbraid · Dwarf</text>
+  <text x="1130" y="130" text-anchor="middle" class="nm">Sylwen Ashleaf · Elf</text>
+
+  <!-- ================= DWARF FRONT ================= -->
+  <g transform="translate(230,880)" filter="url(#paint)">
+    <ellipse cx="0" cy="2" rx="110" ry="14" class="sh"/>
+    <!-- boots -->
+    <path class="ln" fill="url(#boot)" d="M-62,-58 h50 v44 q0,14 -14,14 h-46 q-10,0 -6,-14 z"/>
+    <path class="ln" fill="url(#boot)" d="M12,-58 h50 l16,44 q4,14 -6,14 h-46 q-14,0 -14,-14 z"/>
+    <!-- trousers -->
+    <path class="ln" fill="url(#cloth)" d="M-62,-160 h124 l-2,104 h-52 l-8,-60 l-8,60 h-52 z"/>
+    <!-- arms -->
+    <path class="ln" fill="url(#leather)" d="M-82,-300 q-46,10 -50,60 l-6,62 h38 l6,-56 z"/>
+    <path class="ln" fill="url(#leather)" d="M82,-300 q46,10 50,60 l6,62 h-38 l-6,-56 z"/>
+    <circle class="ln" fill="url(#skin)" cx="-119" cy="-164" r="20"/>
+    <circle class="ln" fill="url(#skin)" cx="119" cy="-164" r="20"/>
+    <!-- torso armor -->
+    <path class="ln" fill="url(#leather)" d="M-84,-305 q84,-24 168,0 q10,70 -6,150 h-156 q-16,-80 -6,-150 z"/>
+    <path class="th" d="M-70,-250 q70,14 140,0 M-74,-205 q74,14 148,0" opacity=".55"/>
+    <path class="th" d="M-40,-300 v140 M40,-300 v140" stroke-dasharray="3 7" opacity=".6"/>
+    <path class="hl" d="M-70,-295 q20,-8 40,-8 q-6,60 -10,130 h-22 q-12,-60 -8,-122 z"/>
+    <!-- belt -->
+    <rect class="ln" x="-84" y="-178" width="168" height="26" rx="4" fill="#4a2c1a"/>
+    <rect class="ln" x="-16" y="-182" width="32" height="34" rx="4" fill="url(#gold)"/>
+    <rect x="-8" y="-174" width="16" height="18" fill="#4a2c1a"/>
+    <!-- pauldrons -->
+    <ellipse class="ln" cx="-92" cy="-292" rx="38" ry="26" fill="url(#leather)"/>
+    <ellipse class="ln" cx="92" cy="-292" rx="38" ry="26" fill="url(#leather)"/>
+    <path class="th" d="M-120,-292 q28,-14 56,0 M64,-292 q28,-14 56,0" opacity=".5"/>
+    <!-- head -->
+    <path class="ln" fill="url(#red)" d="M-50,-350 q0,-62 50,-64 q50,2 50,64 l-8,-4 q-42,-20 -84,0 z"/>
+    <ellipse class="ln" fill="url(#skin)" cx="0" cy="-346" rx="44" ry="46"/>
+    <ellipse class="ln" fill="url(#skin)" cx="-46" cy="-344" rx="8" ry="12"/>
+    <ellipse class="ln" fill="url(#skin)" cx="46" cy="-344" rx="8" ry="12"/>
+    <path class="ln" fill="url(#red)" d="M-46,-360 q6,-40 46,-42 q40,2 46,42 q-14,-18 -26,-18 q-8,10 -20,4 q-12,8 -22,-2 q-14,0 -24,16 z"/>
+    <!-- brows, eyes -->
+    <path d="M-34,-362 q12,-8 24,-2 M34,-362 q-12,-8 -24,-2" stroke="#9a3218" stroke-width="7" stroke-linecap="round" fill="none"/>
+    <ellipse cx="-19" cy="-348" rx="6" ry="8" fill="#3b2417"/><ellipse cx="19" cy="-348" rx="6" ry="8" fill="#3b2417"/>
+    <circle cx="-17" cy="-351" r="2.4" fill="#fff"/><circle cx="21" cy="-351" r="2.4" fill="#fff"/>
+    <ellipse cx="-30" cy="-332" rx="9" ry="5" fill="#ef8a72" opacity=".4"/><ellipse cx="30" cy="-332" rx="9" ry="5" fill="#ef8a72" opacity=".4"/>
+    <!-- beard -->
+    <path class="ln" fill="url(#red)" d="M-46,-344 q-4,60 22,100 q12,18 24,22 q12,-4 24,-22 q26,-40 22,-100 q-14,20 -30,22 q-16,-4 -16,-4 q0,0 -16,4 q-16,-2 -30,-22 z"/>
+    <path class="th" d="M-30,-310 q4,40 18,66 M30,-310 q-4,40 -18,66 M0,-306 v50" stroke="#7f2715" opacity=".6"/>
+    <!-- braid -->
+    <g class="ln" fill="url(#red)">
+      <ellipse cx="0" cy="-222" rx="13" ry="11"/><ellipse cx="0" cy="-204" rx="12" ry="10"/>
+      <ellipse cx="0" cy="-187" rx="11" ry="9"/><ellipse cx="0" cy="-171" rx="10" ry="8"/>
+    </g>
+    <rect class="ln" x="-9" y="-163" width="18" height="10" rx="3" fill="url(#gold)"/>
+    <path class="ln" fill="url(#red)" d="M-8,-153 q8,22 16,0 z"/>
+    <!-- nose & mustache -->
+    <path class="ln" fill="url(#red)" d="M-4,-326 q-26,-4 -40,18 q22,-6 40,-8 q18,2 40,8 q-14,-22 -40,-18 z"/>
+    <ellipse class="ln" cx="0" cy="-334" rx="12" ry="10" fill="#f3a585"/>
+    <circle cx="-4" cy="-338" r="3" fill="#fff" opacity=".6"/>
+  </g>
+
+  <!-- ================= DWARF SIDE (facing right) ================= -->
+  <g transform="translate(560,880)" filter="url(#paint)">
+    <ellipse cx="0" cy="2" rx="100" ry="13" class="sh"/>
+    <path class="ln" fill="url(#boot)" d="M-34,-58 h46 l30,40 q6,18 -10,18 h-72 q-6,0 -4,-14 z"/>
+    <path class="ln" fill="url(#cloth)" d="M-42,-160 h80 l-4,104 h-74 z"/>
+    <!-- torso profile -->
+    <path class="ln" fill="url(#leather)" d="M-50,-305 q60,-20 92,10 q20,70 4,140 h-104 q-14,-80 8,-150 z"/>
+    <path class="th" d="M-50,-250 q50,10 94,0 M-54,-205 q50,10 100,0" opacity=".55"/>
+    <rect class="ln" x="-58" y="-178" width="112" height="26" rx="4" fill="#4a2c1a"/>
+    <rect class="ln" x="40" y="-182" width="18" height="34" rx="3" fill="url(#gold)"/>
+    <!-- pouch -->
+    <path class="ln" fill="url(#leather)" d="M-58,-160 h28 v30 q-14,10 -28,0 z"/>
+    <!-- arm -->
+    <path class="ln" fill="url(#leather)" d="M-24,-300 q36,-6 40,40 l4,90 h-38 l-10,-80 z"/>
+    <circle class="ln" fill="url(#skin)" cx="2" cy="-160" r="20"/>
+    <ellipse class="ln" cx="-4" cy="-292" rx="36" ry="24" fill="url(#leather)"/>
+    <!-- head profile -->
+    <path class="ln" fill="url(#skin)" d="M-42,-350 q0,-50 44,-50 q42,2 46,44 l6,14 q-2,10 -8,12 q-4,34 -40,40 q-48,-6 -48,-60 z"/>
+    <ellipse class="ln" cx="58" cy="-338" rx="12" ry="10" fill="#f3a585"/>
+    <ellipse class="ln" fill="url(#skin)" cx="-8" cy="-344" rx="9" ry="13"/>
+    <path class="ln" fill="url(#red)" d="M-46,-344 q-8,-62 46,-62 q46,2 50,46 q-20,-18 -40,-14 q-20,-2 -30,14 q-6,6 -10,40 q-12,-6 -16,-24 z"/>
+    <path d="M18,-362 q12,-6 24,0" stroke="#9a3218" stroke-width="7" stroke-linecap="round" fill="none"/>
+    <ellipse cx="34" cy="-348" rx="4" ry="7.5" fill="#3b2417"/><circle cx="35" cy="-351" r="2" fill="#fff"/>
+    <ellipse cx="26" cy="-332" rx="8" ry="5" fill="#ef8a72" opacity=".4"/>
+    <!-- beard flowing forward-down -->
+    <path class="ln" fill="url(#red)" d="M-10,-330 q4,-8 14,-2 q24,6 50,-2 q10,4 6,16 q4,50 -22,86 q-18,18 -30,8 q-24,-30 -26,-60 q-4,-20 8,-46 z"/>
+    <path class="th" d="M10,-310 q10,40 6,70 M36,-312 q4,40 -10,74" stroke="#7f2715" opacity=".6"/>
+    <path class="ln" fill="url(#red)" d="M40,-326 q20,0 26,16 q-16,-6 -30,-2 z"/>
+    <g class="ln" fill="url(#red)">
+      <ellipse cx="18" cy="-224" rx="12" ry="11"/><ellipse cx="20" cy="-206" rx="11" ry="10"/>
+      <ellipse cx="22" cy="-189" rx="10" ry="9"/><ellipse cx="24" cy="-173" rx="9" ry="8"/>
+    </g>
+    <rect class="ln" x="16" y="-166" width="17" height="10" rx="3" fill="url(#gold)"/>
+    <path class="ln" fill="url(#red)" d="M17,-156 q8,22 15,0 z"/>
+  </g>
+
+  <!-- ================= ELF FRONT ================= -->
+  <g transform="translate(980,880)" filter="url(#paint)">
+    <ellipse cx="0" cy="2" rx="120" ry="14" class="sh"/>
+    <!-- hair back -->
+    <path class="ln" fill="url(#silver)" d="M-38,-600 q-28,80 -26,190 q-4,50 -28,90 q60,10 92,0 q60,10 92,0 q-24,-40 -28,-90 q2,-110 -26,-190 z"/>
+    <!-- cloak back -->
+    <path class="ln" fill="url(#cloakIn)" d="M-56,-525 c-50,40 -88,300 -100,485 h312 c-12,-185 -50,-445 -100,-485 z"/>
+    <!-- legs & boots -->
+    <path class="ln" fill="#5a4636" d="M-28,-300 h22 l-2,190 h-18 z M6,-300 h22 l-2,190 h-18 z"/>
+    <path class="ln" fill="url(#boot)" d="M-30,-130 h24 l2,118 q2,12 -8,12 h-26 q-10,0 -6,-12 z"/>
+    <path class="ln" fill="url(#boot)" d="M6,-130 h24 l4,118 q4,12 -6,12 h-26 q-8,0 -6,-12 z"/>
+    <!-- tunic -->
+    <path class="ln" fill="url(#tunic)" d="M-44,-526 h88 q6,60 -12,124 q26,70 30,140 q-60,14 -124,0 q4,-70 30,-140 q-18,-64 -12,-124 z"/>
+    <path class="th" d="M0,-520 v40 M-20,-330 q4,40 -2,70 M20,-330 q-4,40 2,70" opacity=".45"/>
+    <rect class="ln" x="-34" y="-410" width="68" height="14" rx="4" fill="#6b4329"/>
+    <circle class="ln" cx="0" cy="-403" r="6" fill="url(#gold)"/>
+    <path class="ln" fill="url(#leather)" d="M18,-396 h22 v26 q-11,8 -22,0 z"/>
+    <!-- cloak front panels -->
+    <path class="ln" fill="url(#cloak)" d="M-46,-530 c-40,-6 -62,30 -70,120 c-12,150 -26,260 -38,370 h58 c6,-150 18,-300 40,-440 c4,-24 8,-40 10,-50 z"/>
+    <path class="ln" fill="url(#cloak)" d="M46,-530 c40,-6 62,30 70,120 c12,150 26,260 38,370 h-58 c-6,-150 -18,-300 -40,-440 c-4,-24 -8,-40 -10,-50 z"/>
+    <path class="th" d="M-104,-400 c-10,120 -20,220 -30,340 M104,-400 c10,120 20,220 30,340 M-80,-300 c-4,80 -10,160 -16,240" stroke="#284d33" opacity=".55"/>
+    <path class="hl" d="M-100,-470 c-8,40 -12,80 -16,120 l10,0 c4,-40 8,-80 14,-118 z"/>
+    <!-- hands -->
+    <ellipse class="ln" fill="url(#skinElf)" cx="-60" cy="-330" rx="10" ry="13"/>
+    <ellipse class="ln" fill="url(#skinElf)" cx="60" cy="-330" rx="10" ry="13"/>
+    <!-- hood bunched at neck -->
+    <path class="ln" fill="url(#cloak)" d="M-58,-540 q58,30 116,0 q4,22 -12,32 q-46,18 -92,0 q-16,-10 -12,-32 z"/>
+    <rect class="ln" x="-9" y="-560" width="18" height="24" fill="url(#skinElf)"/>
+    <path class="ln" fill="url(#gold)" d="M0,-534 q14,8 0,22 q-14,-14 0,-22 z"/>
+    <!-- ears -->
+    <path class="ln" fill="url(#skinElf)" d="M-30,-592 l-36,-26 q8,22 34,42 z"/>
+    <path class="ln" fill="url(#skinElf)" d="M30,-592 l36,-26 q-8,22 -34,42 z"/>
+    <!-- face -->
+    <path class="ln" fill="url(#skinElf)" d="M-32,-600 q-2,34 12,46 q20,14 40,0 q14,-12 12,-46 q-2,-28 -32,-28 q-30,0 -32,28 z"/>
+    <ellipse cx="-13" cy="-586" rx="6.5" ry="8.5" fill="#3e8a6a"/><ellipse cx="13" cy="-586" rx="6.5" ry="8.5" fill="#3e8a6a"/>
+    <ellipse cx="-13" cy="-584" rx="3" ry="4.5" fill="#1f3d30"/><ellipse cx="13" cy="-584" rx="3" ry="4.5" fill="#1f3d30"/>
+    <circle cx="-11" cy="-590" r="2.4" fill="#fff"/><circle cx="15" cy="-590" r="2.4" fill="#fff"/>
+    <path class="th" d="M-21,-594 q8,-6 16,-1 M21,-594 q-8,-6 -16,-1" stroke-width="2.2"/>
+    <path class="th" d="M-4,-562 q4,2 8,0" stroke="#b35a4a"/>
+    <ellipse cx="-20" cy="-572" rx="6" ry="3" fill="#f39a8a" opacity=".45"/><ellipse cx="20" cy="-572" rx="6" ry="3" fill="#f39a8a" opacity=".45"/>
+    <!-- bangs & side locks -->
+    <path class="ln" fill="url(#silver)" d="M-36,-592 q-4,-40 36,-40 q40,0 36,40 l-8,-4 q-10,-12 -16,-4 q-6,-14 -12,-6 q-8,-12 -14,0 q-6,-10 -14,2 q-6,-6 -8,12 z"/>
+    <path class="ln" fill="url(#silver)" d="M-36,-594 q-12,90 -14,200 q8,4 14,-6 q0,-110 8,-190 z"/>
+    <path class="ln" fill="url(#silver)" d="M36,-594 q12,90 14,200 q-8,4 -14,-6 q0,-110 -8,-190 z"/>
+    <path class="hl" d="M-24,-622 q24,-8 48,0 q-24,-2 -48,6 z" opacity=".8"/>
+  </g>
+
+  <!-- ================= ELF SIDE (facing right) ================= -->
+  <g transform="translate(1320,880)" filter="url(#paint)">
+    <ellipse cx="0" cy="2" rx="120" ry="13" class="sh"/>
+    <!-- cloak back drape -->
+    <path class="ln" fill="url(#cloak)" d="M-14,-528 c-60,30 -110,270 -134,488 h150 c-4,-180 0,-360 14,-470 z"/>
+    <path class="th" d="M-60,-420 c-20,120 -40,240 -56,370 M-30,-380 c-10,110 -20,220 -28,330" stroke="#284d33" opacity=".55"/>
+    <!-- hair flowing back -->
+    <path class="ln" fill="url(#silver)" d="M-26,-610 q-30,20 -40,90 q-14,90 -40,170 q-10,26 -30,34 q40,4 64,-22 q22,-60 30,-130 q6,-70 32,-120 z"/>
+    <!-- legs -->
+    <path class="ln" fill="#5a4636" d="M-16,-300 h24 l4,190 h-22 z M2,-300 h20 l18,190 h-20 z"/>
+    <path class="ln" fill="url(#boot)" d="M-16,-130 h24 l4,104 l22,12 q8,14 -6,14 h-42 q-8,0 -4,-12 z"/>
+    <path class="ln" fill="url(#boot)" d="M18,-130 h22 l8,104 l22,12 q8,14 -6,14 h-40 q-8,0 -4,-12 z" opacity=".95"/>
+    <!-- tunic -->
+    <path class="ln" fill="url(#tunic)" d="M-18,-526 h40 q12,60 -6,124 q30,70 34,140 h-74 q2,-70 2,-140 q-10,-64 4,-124 z"/>
+    <rect class="ln" x="-22" y="-410" width="50" height="14" rx="4" fill="#6b4329"/>
+    <path class="ln" fill="url(#leather)" d="M-22,-396 h20 v26 q-10,8 -20,0 z"/>
+    <!-- arm -->
+    <path class="ln" fill="url(#tunic)" d="M-4,-516 q24,0 26,30 l-4,140 h-20 z"/>
+    <ellipse class="ln" fill="url(#skinElf)" cx="8" cy="-334" rx="9" ry="13"/>
+    <!-- cloak shoulder cape -->
+    <path class="ln" fill="url(#cloak)" d="M-30,-540 q50,-10 62,24 q6,50 -6,80 q-30,-20 -56,-14 q-20,-40 0,-90 z"/>
+    <path class="hl" d="M-8,-530 q24,0 30,20 q-14,-6 -30,-4 z"/>
+    <!-- hood bunched -->
+    <path class="ln" fill="url(#cloak)" d="M-40,-548 q30,24 56,8 q-2,26 -24,32 q-30,0 -32,-40 z"/>
+    <rect class="ln" x="-4" y="-560" width="16" height="22" fill="url(#skinElf)"/>
+    <path class="ln" fill="url(#gold)" d="M18,-534 q12,8 0,20 q-10,-12 0,-20 z"/>
+    <!-- head profile -->
+    <path class="ln" fill="url(#skinElf)" d="M-26,-600 q0,-28 28,-28 q30,0 32,30 l6,12 l-6,4 q2,8 -2,12 q-6,16 -24,18 q-20,0 -28,-14 q-8,-14 -6,-34 z"/>
+    <path class="ln" fill="url(#skinElf)" d="M-4,-594 l-40,-28 q8,24 38,44 z"/>
+    <ellipse cx="22" cy="-586" rx="3.6" ry="8" fill="#3e8a6a"/><circle cx="23" cy="-590" r="1.8" fill="#fff"/>
+    <path class="th" d="M15,-596 q8,-4 14,0" stroke-width="2.2"/>
+    <ellipse cx="16" cy="-572" rx="6" ry="3" fill="#f39a8a" opacity=".45"/>
+    <!-- hair top & bangs -->
+    <path class="ln" fill="url(#silver)" d="M-30,-596 q-2,-40 32,-38 q34,2 34,34 q-8,-8 -16,-4 q-6,-10 -14,-2 q-10,-10 -18,6 q-6,6 -6,30 q-8,-8 -12,-26 z"/>
+    <path class="hl" d="M-14,-626 q22,-6 40,8 q-20,-4 -40,0 z" opacity=".8"/>
+  </g>
+
+  <!-- view labels -->
+  <g class="lbl" text-anchor="middle">
+    <text x="230" y="920">FRONT</text><text x="560" y="920">SIDE</text>
+    <text x="980" y="920">FRONT</text><text x="1320" y="920">SIDE</text>
+  </g>
+
+  <!-- palette swatches -->
+  <g transform="translate(70,950)">
+    <text x="0" y="16" class="note">Palette</text>
+    <g stroke="#3b2417" stroke-width="1.2">
+      <circle cx="80" cy="10" r="10" fill="#b8401f"/><circle cx="106" cy="10" r="10" fill="#8a5530"/>
+      <circle cx="132" cy="10" r="10" fill="#5f5141"/><circle cx="158" cy="10" r="10" fill="#f2b996"/>
+      <circle cx="184" cy="10" r="10" fill="#e0a840"/>
+    </g>
+    <text x="210" y="16" class="note">red braided beard · leather armor · wool trousers · skin · brass</text>
+  </g>
+  <g transform="translate(820,950)">
+    <text x="0" y="16" class="note">Palette</text>
+    <g stroke="#3b2417" stroke-width="1.2">
+      <circle cx="80" cy="10" r="10" fill="#dfe3ec"/><circle cx="106" cy="10" r="10" fill="#3f7448"/>
+      <circle cx="132" cy="10" r="10" fill="#efe3c8"/><circle cx="158" cy="10" r="10" fill="#3e8a6a"/>
+      <circle cx="184" cy="10" r="10" fill="#7d5233"/>
+    </g>
+    <text x="210" y="16" class="note">silver hair · green travel cloak · linen tunic · eyes · boots</text>
+  </g>
+</svg>
