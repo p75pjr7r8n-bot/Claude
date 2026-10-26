@@ -37,3 +37,10 @@ AI社員はこの欄を前提に仕事をします。空欄のままなら、必
 - ブランドのトーン（例：親しみやすい／専門的）：
 - 使っているSNS：
 - NG事項：
+
+## note の毎朝自動下書き
+
+- 毎朝5:51（日本時間）にスケジュールタスクが新しいセッションを起動し、`note-daily` スキル（`.claude/skills/note-daily/SKILL.md`）を実行する。
+- 材料は `note/inbox/` の体験メモ、設定は `note/settings.md`、型は `note/templates.md`。
+- 下書き保存は `scripts/note_draft.py`（非公式API）。**公開は社長が note の画面で行う。公開系の操作は自動でしない。**
+- 必要な環境設定：ネットワークで `note.com` を許可、シークレット `NOTE_COOKIE`（または `NOTE_EMAIL` / `NOTE_PASSWORD`）。
