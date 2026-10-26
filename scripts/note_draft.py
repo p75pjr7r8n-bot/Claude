@@ -5,12 +5,13 @@ note には一般向けの公式APIがないため、note のエディタが内�
 仕様変更で動かなくなることがあり、利用は自己責任。
 
 使い方:
-    python3 scripts/note_draft.py note/drafts/2026-10-27-xxx.md            # 下書き保存
-    python3 scripts/note_draft.py note/drafts/2026-10-27-xxx.md --dry-run  # 変換結果だけ表示
+    python3 scripts/note_draft.py --account ai note/accounts/ai/drafts/2026-10-27-xxx.md   # 下書き保存
+    python3 scripts/note_draft.py --account ai <ファイル> --dry-run                        # 変換結果だけ表示
 
-認証（どちらか。環境の設定にシークレットとして登録する）:
-    NOTE_COOKIE   ブラウザで note にログインした状態の Cookie ヘッダー文字列（推奨）
-    NOTE_EMAIL / NOTE_PASSWORD   ログインAPIで Cookie を取得する（reCAPTCHA で弾かれることがある）
+認証（アカウントごと。<ID> は --account を大文字にしたもの。例: ai → AI）:
+    NOTE_COOKIE_<ID>   ブラウザでそのアカウントにログインした状態の Cookie ヘッダー文字列（推奨）
+    NOTE_EMAIL_<ID> / NOTE_PASSWORD_<ID>   ログインAPIで Cookie を取得する（reCAPTCHA で弾かれることがある）
+    別アカウントへの誤投稿を防ぐため、共通の NOTE_COOKIE は読まない。
 
 記事ファイルの形式:
     1行目 `# タイトル`、2行目以降が本文（## / ### 見出し、段落、**太字**、- 箇条書き、1. 番号付き、> 引用、---）。
@@ -155,22 +156,23 @@ class Note:
             sys.exit(f"エラー: note.com に接続できません（{e.reason}）。環境のネットワーク設定で note.com を許可してください。")
 
 
-def login() -> Note:
-    cookie = os.environ.get("NOTE_COOKIE", "").strip()
+def login(account: str) -> Note:
+    sfx = account.upper()
+    cookie = os.environ.get(f"NOTE_COOKIE_{sfx}", "").strip()
     if cookie:
         return Note(cookie)
-    email, password = os.environ.get("NOTE_EMAIL"), os.environ.get("NOTE_PASSWORD")
+    email, password = os.environ.get(f"NOTE_EMAIL_{sfx}"), os.environ.get(f"NOTE_PASSWORD_{sfx}")
     if not (email and password):
-        sys.exit("エラー: NOTE_COOKIE（または NOTE_EMAIL と NOTE_PASSWORD）が設定されていません。")
+        sys.exit(f"エラー: NOTE_COOKIE_{sfx}（または NOTE_EMAIL_{sfx} と NOTE_PASSWORD_{sfx}）が設定されていません。")
     n = Note("")
     n.request("POST", "/api/v1/sessions/sign_in", {"login": email, "password": password})
     if not any(k.startswith("_note_session") for k in n.jar):
-        sys.exit("エラー: ログインに失敗しました。reCAPTCHA で弾かれた可能性があります。NOTE_COOKIE を使ってください。")
+        sys.exit(f"エラー: ログインに失敗しました。reCAPTCHA で弾かれた可能性があります。NOTE_COOKIE_{sfx} を使ってください。")
     return n
 
 
-def save_draft(title: str, body_html: str) -> str:
-    n = login()
+def save_draft(account: str, title: str, body_html: str) -> str:
+    n = login(account)
     created = n.request("POST", "/api/v1/text_notes", {"body": body_html, "name": title, "template_key": None})
     data = created.get("data", {})
     note_id, key = data.get("id"), data.get("key")
@@ -188,6 +190,7 @@ def save_draft(title: str, body_html: str) -> str:
 
 def main():
     ap = argparse.ArgumentParser(description="Markdown 記事を note の下書きに保存する（公開はしない）")
+    ap.add_argument("--account", required=True, help="note/accounts/ 以下のフォルダ名（love, beauty, travel, worktips, ai）")
     ap.add_argument("file")
     ap.add_argument("--dry-run", action="store_true", help="note に送らず、変換結果を表示する")
     args = ap.parse_args()
@@ -197,8 +200,10 @@ def main():
     if args.dry_run:
         print(json.dumps({"title": title, "tags": tags, "chars": len(body_md), "html": body_html}, ensure_ascii=False, indent=2))
         return
-    url = save_draft(title, body_html)
-    print(f"下書きを保存しました: {title}\n編集画面: {url}")
+    if not re.fullmatch(r"[a-z0-9_]+", args.account):
+        sys.exit("エラー: --account は英小文字・数字・_ だけにしてください")
+    url = save_draft(args.account, title, body_html)
+    print(f"[{args.account}] 下書きを保存しました: {title}\n編集画面: {url}")
     if tags:
         print(f"ハッシュタグ（公開時に付ける）: {tags}")
 
