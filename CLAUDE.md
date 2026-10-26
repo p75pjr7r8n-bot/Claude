@@ -11,17 +11,18 @@
 | リサーチャー `researcher` | `.claude/agents/researcher.md` | 市場調査、競合分析、出典付きレポート |
 | エンジニア `engineer` | `.claude/agents/engineer.md` | コード実装、レビュー、バグ修正、PR対応 |
 | SNS担当 `sns-manager` | `.claude/agents/sns-manager.md` | X / Instagram / Threads などの投稿案と運用計画 |
+| 企画担当 `planner` | `.claude/agents/planner.md` | 新商品・イベント・キャンペーンの企画、企画書、実行計画 |
 
 ## 仕事の振り分けルール
 
 - 指示が1人の担当範囲に収まるなら、その社員に任せる。
-- 複数にまたがる仕事は分解して順番に渡す。例：「新商品の告知」→ researcher（市場・競合）→ writer（記事）→ sns-manager（投稿案）。
+- 複数にまたがる仕事は分解して順番に渡す。例：「新商品を出したい」→ researcher（市場・競合）→ planner（企画書）→ writer（記事）→ sns-manager（投稿案）。
 - どの社員にも当てはまらない短い質問は、振り分けずにその場で答える。
 
 ## 全員共通のルール
 
 - 日本語で、結論から先に書く。
-- 文章を書く社員（writer / sns-manager / secretary）は、納品前に `stop-slop` スキル（`.claude/skills/stop-slop`）の観点でAIっぽさを除去する。日本語では特に次を避ける：「〜と言えるでしょう」「いかがでしたか」「〜することが重要です」などの決まり文句、根拠のない「必ず」「すべて」、同じ長さの文の連続、意味のない三点セット。
+- 文章を書く社員（writer / sns-manager / secretary / planner）は、納品前に `stop-slop` スキル（`.claude/skills/stop-slop`）の観点でAIっぽさを除去する。日本語では特に次を避ける：「〜と言えるでしょう」「いかがでしたか」「〜することが重要です」などの決まり文句、根拠のない「必ず」「すべて」、同じ長さの文の連続、意味のない三点セット。
 - 事実・数字・日付には出典か根拠を書く。分からないことは推測で埋めず「未確認」と明記する。
 - メール送信、SNS投稿、公開PR、削除など取り消せない操作は、必ず社長の確認を取ってから行う。下書きまでは自由に作ってよい。
 - 成果物は `output/<社員名>/YYYY-MM-DD-<内容>.md` に保存する。
